@@ -1,11 +1,21 @@
 module github.com/z4yx/GoAuthing
 
-go 1.12
+go 1.17
 
 require (
-	github.com/howeyc/gopass v0.0.0-20190910152052-7cb4b85ec19c
-	github.com/juju/loggo v0.0.0-20210728185423-eebad3a902c4
-	github.com/smartystreets/goconvey v1.6.4
-	golang.org/x/crypto v0.1.0 // indirect
-	gopkg.in/urfave/cli.v1 v1.20.0
+	github.com/juju/loggo v1.0.0
+	github.com/smartystreets/goconvey v1.8.1
+	github.com/urfave/cli v1.22.14
+	golang.org/x/term v0.15.0
+)
+
+require (
+	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/gopherjs/gopherjs v1.17.2 // indirect
+	github.com/jtolds/gls v4.20.0+incompatible // indirect
+	github.com/kr/pretty v0.1.0 // indirect
+	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	github.com/smarty/assertions v1.15.0 // indirect
+	golang.org/x/sys v0.15.0 // indirect
+	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 )

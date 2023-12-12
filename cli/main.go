@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/howeyc/gopass"
+	"golang.org/x/term"
 	"github.com/juju/loggo"
-	"gopkg.in/urfave/cli.v1"
+	"github.com/urfave/cli"
 
 	"github.com/z4yx/GoAuthing/libauth"
 	"github.com/z4yx/GoAuthing/libtunet"
@@ -121,7 +121,7 @@ func requestPasswd() (err error) {
 	if len(settings.Password) == 0 && !settings.Daemon {
 		var b []byte
 		fmt.Printf("Password: ")
-		b, err = gopass.GetPasswdMasked()
+		b, err = term.ReadPassword(int(os.Stdin.Fd()))
 		if err != nil {
 			// Handle gopass.ErrInterrupted or getch() read error
 			err = fmt.Errorf("interrupted")
