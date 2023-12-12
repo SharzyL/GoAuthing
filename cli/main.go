@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net"
 	"net/http"
 	"os"
@@ -47,7 +47,7 @@ func parseSettingsFile(path string) error {
 		return fmt.Errorf("read config file failed (%s)", err)
 	}
 	defer sf.Close()
-	bv, _ := ioutil.ReadAll(sf)
+	bv, _ := io.ReadAll(sf)
 	err = json.Unmarshal(bv, &settings)
 	if err != nil {
 		return fmt.Errorf("parse config file \"%s\" failed (%s)", path, err)
